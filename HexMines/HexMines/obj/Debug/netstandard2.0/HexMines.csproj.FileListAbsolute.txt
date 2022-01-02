@@ -1,0 +1,15 @@
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\bin\Debug\netstandard2.0\HexMines.deps.json
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\bin\Debug\netstandard2.0\HexMines.dll
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\bin\Debug\netstandard2.0\ref\HexMines.dll
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\bin\Debug\netstandard2.0\HexMines.pdb
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.csproj.AssemblyReference.cache
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.AssemblyInfoInputs.cache
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.AssemblyInfo.cs
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.csproj.CoreCompileInputs.cache
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.dll
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\ref\HexMines.dll
+C:\Users\CarstenNeubauer\source\repos\HexMines\HexMines\HexMines\obj\Debug\netstandard2.0\HexMines.pdb

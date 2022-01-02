@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:droid="clr-namespace:HexMines.Droid"
+             x:Class="HexMines.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="24">
+            <Label Text="Hexadecimal Minesweeper" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Start playing now" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Try to solve the minefield with the aid of the hexadecimal values :-)" FontSize="16" Padding="30,0,30,0"/>
+        <Grid x:Name="minesGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <AbsoluteLayout x:Name="mineLayout"
+                        HorizontalOptions="Center"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="1" />
+
+            <Label Text="0" Grid.Row="0" Grid.Column="2" />
+            <Label Text="X" Grid.Row="1" Grid.Column="2" />
+            
+            <AbsoluteLayout x:Name="hexLayout"
+                        HorizontalOptions="Fill"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="1" />
+
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
