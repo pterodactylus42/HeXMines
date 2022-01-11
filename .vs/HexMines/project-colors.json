@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cbe0d2c8-e733-4562-9408-2895652de981": {
+      "ProjectGuid": "cbe0d2c8-e733-4562-9408-2895652de981",
+      "DisplayName": "HexMines",
+      "ColorIndex": 0
+    },
+    "6124d1af-d38a-4834-8f9e-209c1efd7503": {
+      "ProjectGuid": "6124d1af-d38a-4834-8f9e-209c1efd7503",
+      "DisplayName": "HexMines.Android",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

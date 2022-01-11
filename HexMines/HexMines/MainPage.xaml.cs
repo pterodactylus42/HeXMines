@@ -13,21 +13,6 @@ namespace HexMines
 
         public ObservableCollection<MineInfo> mines { get; set; }
 
-        public class MineInfo
-        {
-            public MineInfo(int index, bool isExplosive, Button pressButton)
-            {
-                Index = index;
-                IsExplosive = isExplosive;
-                PressButton = pressButton;
-            }
-
-            public int Index { private set; get; }
-            public bool IsExplosive { private set; get; }
-
-            public Button PressButton { private set; get; }
-        }
-
         private Random random = new Random();
         public MainPage()
         {
@@ -39,35 +24,31 @@ namespace HexMines
         {
             Trace.WriteLine("InitMinefield()");
             mines = new ObservableCollection<MineInfo>();
+            Color myColor;
             for (int i = 0; i < 32; i++)
             {
+                myColor = new Color(random.NextDouble(), random.NextDouble(), random.NextDouble());
                 Trace.WriteLine($"Adding button {i}");
-                Button button = new Button
-                {
-                    Text = i.ToString(),
-                    FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label)),
-                    TextColor = new Color(random.NextDouble(),
-                          random.NextDouble(),
-                          random.NextDouble()),
-                    WidthRequest = BUTTON_X_SIZE,
-                    HeightRequest = BUTTON_Y_SIZE,
-                    BackgroundColor = new Color(random.NextDouble(),
-                          random.NextDouble(),
-                          random.NextDouble())
-                };
+                MatrixButton button = new MatrixButton(i);
+                button.Text = i.ToString();
+                button.FontSize = Device.GetNamedSize(NamedSize.Micro, typeof(Label));
+                button.TextColor = myColor;
+                button.WidthRequest = BUTTON_X_SIZE;
+                button.HeightRequest = BUTTON_Y_SIZE;
+                button.BackgroundColor = myColor;
                 button.Clicked += Button_Clicked;
-                mines.Add(new MineInfo(i, random.Next() % 2 == 0, button));
+                mines.Add(new MineInfo(random.Next() % 2 == 0, button));
                 mineLayout.Children.Add(button,new Point(BUTTON_X_SIZE*(i % 4), BUTTON_Y_SIZE * (i / 4)));
             }
-            // generate hex string
+
             int[] rowSum = new int[8];
             for(int j = 0; j < 32; j++)
             {
-                var mine = mines.Single(m => m.Index == j);
+                var mine = mines.Single(m => m.MineButton.Index == j);
                 if (mine.IsExplosive)
                 {
-                    Trace.WriteLine($"Caution: Mine # {mine.Index} is explosive! Adding {Math.Pow(2, j % 4)} to sum.");
-                    rowSum[j / 4] += (int)Math.Pow(2, j % 4);
+                    Trace.WriteLine($"Caution: Mine # {mine.MineButton.Index} is explosive! Adding {Math.Pow(2, 3-(j % 4))} to sum. Row index: {3-(j % 4)}");
+                    rowSum[j / 4] += (int)Math.Pow(2, 3 - (j % 4));
                 }
             }
             for(int k = 0; k < 8; k++)
@@ -126,8 +107,18 @@ namespace HexMines
         {
             var clickedButton = sender as Button;
             var index = int.Parse(clickedButton.Text);
-            var mine = mines.Single(m => m.Index == index);
-            Trace.WriteLine($"You clicked me: {mine.Index} IsExplosive: {mine.IsExplosive}");
+            var mine = mines.Single(m => m.MineButton.Index == index);
+            Trace.WriteLine($"You clicked me: {mine.MineButton.Index} IsExplosive: {mine.IsExplosive}");
+            if(mine.IsExplosive)
+            {
+                clickedButton.BackgroundColor = Color.Red;
+                clickedButton.TextColor = Color.Red;
+            }
+            else
+            {
+                clickedButton.BackgroundColor = Color.Green;
+                clickedButton.TextColor = Color.Green;
+            }
         }
     }
 }
